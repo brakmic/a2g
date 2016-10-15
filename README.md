@@ -106,7 +106,9 @@ yarn global add a2g
 `
 npm run build:dev
 `
-for production
+
+For production
+
 `
 npm run build:prod
 `
@@ -122,6 +124,8 @@ npm test
 `
 npm run watch:test
 `
+
+<img src="http://fs5.directupload.net/images/161015/yqo2mzzm.png" witdh=500 height=500>
 
 #### License
 
