@@ -2,12 +2,10 @@
 
 This is a small project for generating skeleton code for various (angular2-oriented) structures.
 
-Actually, there's no need for such a tool as we already have [angular-cli](https://github.com/angular/angular-cli) but 
+Actually, there's no need for such a tool as we already have [angular-cli](https://github.com/angular/angular-cli) but due to some reasons I couldn't use it for my current project. There were some errors I didn't want to fiddle with around as
+I was only searching for some easy way to generate a bunch of files.
 
-due to some reasons I couldn't use it for my current project. There were some errors I didn't want to fiddle with around as
-was only searching for some easy way to generate a bunch of files.
-
-However, I'd still recommend to use angular-cli as this little project is neither well designed not very flexible.
+However, I'd still recommend to use *angular-cli* as this little project is neither well designed not very flexible.
 
 #### Usage
 
