@@ -72,11 +72,11 @@ export enum Foxtrott {
 
 Other possible structures are: 
     
-    * Angular 2 Directives
-    * Angular 2 Modules
-    * Angular 2 Pipes
-    * TypeScript Interfaces
-    * TypeScript Classes 
+* Angular 2 Directives
+* Angular 2 Modules
+* Angular 2 Pipes
+* TypeScript Interfaces
+* TypeScript Classes 
 
 If your structure (class, component etc.) should be written in camelCase just use **-** 
 
