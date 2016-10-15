@@ -1,6 +1,6 @@
 {
   "name": "a2g",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "an extremely simple Angular 2 source code generator",
   "main": "index.ts",
   "bin": {
@@ -10,6 +10,10 @@
     "angular2",
     "generator"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brakmic"
+  },
   "scripts": {
     "docker": "docker",
     "rimraf": "rimraf",
