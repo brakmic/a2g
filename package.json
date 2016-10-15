@@ -1,6 +1,6 @@
 {
   "name": "a2g",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "an extremely simple Angular 2 source code generator",
   "main": "index.ts",
   "bin": {
