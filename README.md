@@ -78,9 +78,7 @@ Other possible structures are:
 * TypeScript Interfaces
 * TypeScript Classes 
 
-If your structure (class, component etc.) should be written in camelCase just use **-** 
-
-to separate words.
+If your structure (class, component etc.) should be written in camelCase just use **-** to separate words.
 
 Example:
 
