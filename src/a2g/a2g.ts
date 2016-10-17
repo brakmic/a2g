@@ -32,14 +32,18 @@ export class XGen {
        this.chain = this.getArgumentChain(this.line);
     }
     public execute(): Promise<any> {
-        if (!_.find(this.allArgs, a => a === '--help')) {
+        if (this.allArgs.length > 2 &&
+            !_.find(this.allArgs, a => a === '--help')) {
             return this.runEx();
         } else {
-           return Promise.resolve(this.showUsage());
+           return this.showUsage().then(h => {
+               console.log(h);
+               return Promise.resolve(true);
+           });
         }
     }
-    private showUsage(): string {
-        return `*-------------------------------------------------------------------------------------------*
+    private showUsage(): Promise<string> {
+        return Promise.resolve(`*-------------------------------------------------------------------------------------------*
             USAGE: a2g <STRUCTURE_TYPE> <NAME> [--dir PATH] [--opt VALUES] [--help]
 
             STRUCTURE_TYPE: class, component, directive, enum,
@@ -73,7 +77,7 @@ export class XGen {
           m  => module 
           p  => pipe 
           s  => service 
-        `;
+        `);
     }
     private getArgs(cmdArgs: string[]): string[] {
         let args = _.drop(cmdArgs, 2)
