@@ -51,7 +51,7 @@ export class XGen {
             NAME            [mandatory] name of the structure to be created
             --dir PATH      [optional] target directory (if not set the current path will be used)
             --opt VALUES    [optional] entries separated by comma or white space
-            --force         [optional] overwrite existing files 
+            --overwrite     [optional] overwrite existing files 
             --dry           [optional] execute without touching the file system
             --help          this text
           *-------------------------------------------------------------------------------------------*
