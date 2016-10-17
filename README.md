@@ -1,9 +1,8 @@
 ### a2g - code file generation made easy!
 
-This is a small project for generating skeleton code for various (angular2-oriented) structures.
+This is a small project for generating skeleton code for various *Angular 2* & *TypeScript* structures.
 
-Actually, there's no need for such a tool as we already have [angular-cli](https://github.com/angular/angular-cli) but due to some reasons I couldn't use it for my current project. There were some errors I didn't want to fiddle with around as
-I was only searching for some easy way to generate a bunch of files.
+Actually, there's no need for such a tool as we already have [angular-cli](https://github.com/angular/angular-cli). Sadly, I couldn't use it because of some weird errors that were related to my current Angular 2 version.
 
 However, I'd still recommend to use *angular-cli* as this little project is neither well designed nor very flexible.
 
@@ -101,7 +100,7 @@ This will produce a component named **FoxtrottUnicornCharlieKilo**
 npm i -g a2g 
 `
 
-or if you're more *modern*
+or
 
 `
 yarn global add a2g
@@ -131,7 +130,7 @@ npm test
 npm run watch:test
 `
 
-<img src="http://fs5.directupload.net/images/161015/yqo2mzzm.png" witdh=500 height=500>
+<img src="http://fs5.directupload.net/images/161017/rmdv48v8.png" witdh=500 height=500>
 
 #### License
 
