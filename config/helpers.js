@@ -1,7 +1,3 @@
-/**
- * @author: advarics GmbH
- */
-
 var path = require('path');
 
 // Helper functions
