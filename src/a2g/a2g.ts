@@ -39,18 +39,16 @@ export class XGen {
         }
     }
     private showUsage(): string {
-        return `Insufficient parameters!
-        
-          *-------------------------------------------------------------------------------------------*
+        return `*-------------------------------------------------------------------------------------------*
             USAGE: a2g <STRUCTURE_TYPE> <NAME> [--dir PATH] [--opt VALUES] [--help]
 
             STRUCTURE_TYPE: class, component, directive, enum,
                             interface, module, pipe, service
             NAME            [mandatory] name of the structure to be created
             --dir PATH      [optional] target directory (if not set the current path will be used)
-            --opt VALUES    [optional] entries separated by comma (currently available only for Enums)
+            --opt VALUES    [optional] entries separated by comma or white space
             --force         [optional] overwrite existing files 
-            --dry           [optionla] execute without touching the file system (a.k.a. dry-run)
+            --dry           [optional] execute without touching the file system
             --help          this text
           *-------------------------------------------------------------------------------------------*
 
@@ -307,7 +305,13 @@ export class XGen {
                 if ((_.isNull(err) && overwrite && !dry) || !_.isNull(err)) {
                     return fs.mkdir(name, err2 => resolve(true));
                 } else {
-                    reject(false);
+                    if (dry) {
+                        console.log(`Dry Run | Creating directory ${name}`);
+                        resolve(true);
+                    } else {
+                        console.error(`ERROR: Directory ${name} already exists!`);
+                        resolve(false);
+                    }
                 }
             });
         });
@@ -344,7 +348,7 @@ export class XGen {
         return new Promise((resolve, reject) => {
            const fullPath = `${path}/${name}`;
            return fs.access(name, fs.constants.R_OK | fs.constants.W_OK, err => {
-               if ((_.isNull(err) && overwrite) || !_.isNull(err)) {
+               if ((_.isNull(err) && overwrite && !dry) || !_.isNull(err)) {
                    fs.writeFile(fullPath, content, err2 => {
                        if (!_.isNil(err2)) {
                            reject(false);
@@ -353,7 +357,12 @@ export class XGen {
                        }
                    });
                } else {
-                   reject(false);
+                   if (dry) {
+                       console.log(`Dry Run | Writing file ${fullPath}`);
+                   } else {
+                       console.error(`ERROR: File ${fullPath} already exists!`);
+                       resolve(false);
+                   }
                }
            });
         });

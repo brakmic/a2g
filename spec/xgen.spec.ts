@@ -1,4 +1,5 @@
 /// <reference path="../typings/globals/jasmine/index.d.ts" />
+import * as _ from 'lodash';
 import { XGen } from '../src/a2g';
 
 describe('Class : XGen', () => {
@@ -11,6 +12,8 @@ describe('Class : XGen', () => {
   let resultModule = false;
   let resultPipe = false;
   let resultService = false;
+  let resultServiceWithOverwrite = false;
+  let resultServiceWithDryRun = false;
 
   let a2gComponent: XGen = undefined;
   let a2gClass: XGen = undefined;
@@ -20,6 +23,8 @@ describe('Class : XGen', () => {
   let a2gModule: XGen = undefined;
   let a2gPipe: XGen = undefined;
   let a2gService: XGen = undefined;
+  let a2gServiceWithOverwrite = undefined;
+  let a2gServiceWithDryRun = undefined;
 
   const paramsComponent = ['node', 'index.ts',      'c',  'foxtrott',        '--dir', `${testOutDir}`, '--overwrite'];
   const paramsClass =     ['node', 'index.ts',      'cl', 'unicorn',         '--dir', `${testOutDir}`, '--overwrite'];
@@ -95,6 +100,24 @@ describe('Class : XGen', () => {
     });
   });
 
+  beforeAll(done => {
+    const withOverwrite = _.concat(paramsService, ['--overwrite']);
+    a2gServiceWithOverwrite = new XGen(paramsService);
+    a2gServiceWithOverwrite.execute().then(res => {
+      resultServiceWithOverwrite = res;
+      done();
+    });
+  });
+
+  beforeAll(done => {
+    const withDryRun = _.concat(paramsService, ['--dry']);
+    a2gServiceWithDryRun = new XGen(paramsService);
+    a2gServiceWithDryRun.execute().then(res => {
+      resultServiceWithDryRun = res;
+      done();
+    });
+  });
+
   /**
    * Instances
    */
@@ -129,6 +152,14 @@ describe('Class : XGen', () => {
   it('a2gService: should be initialized', () => {
     expect(a2gService).toBeTruthy();
   });
+
+  it('a2gService [for overwrite tests]: should be initialized', () => {
+    expect(a2gServiceWithOverwrite).toBeTruthy();
+  });
+
+  it('a2gService [for dry-run tests]: should be initialized', () => {
+    expect(a2gServiceWithDryRun).toBeTruthy();
+  });
   /**
    * Outputs
    */
@@ -162,5 +193,13 @@ describe('Class : XGen', () => {
 
   it('a2gService: should generate a service', () => {
     expect(resultService).toBeTruthy();
+  });
+
+  it('a2gService [for overwrite tests]: should overwrite an already existing file', () => {
+    expect(resultServiceWithOverwrite).toBeTruthy();
+  });
+
+  it('a2gService [for dry-run tests]: should execute in dry-run mode', () => {
+    expect(resultServiceWithDryRun).toBeTruthy();
   });
 });

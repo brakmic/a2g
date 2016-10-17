@@ -12,7 +12,7 @@ However, I'd still recommend to use *angular-cli* as this little project is neit
 Generating an **Angular2 Component**
 
 `
-a2g component dir=./some/dir foxtrott   [*dir* is optional]
+a2g component foxtrott --dir ./some/dir
 `
 
 Result:
@@ -27,7 +27,7 @@ Result:
 Generating an **Angular 2 Service**
 
 `
-a2g service dir=./some/dir unicorn
+a2g service unicorn --dir ./some/dir
 `
 
 
@@ -42,14 +42,8 @@ Result:
 Generating a **TypeScript Enum**
 
 `
-a2g enum dir=./some/dir foxtrott unicorn charlie kilo
+a2g enum foxtrott --dir ./some/dir --opt unicorn, charlie, kilo
 `  
-
-*The following rule only applies to Enums*
-
-*foxtrott* will become the name of enum. The rest will be used as
-enum entries.
-
 
 Result:
         
@@ -83,11 +77,23 @@ If your structure (class, component etc.) should be written in PascalCase just u
 Example:
 
 `
-a2g component dir=./some/dir foxtrott-unicorn-charlie-kilo
+a2g component foxtrott-unicorn-charlie-kilo
 `
 
 This will produce a component named **FoxtrottUnicornCharlieKilo**
 
+#### Short commands
+
+| Structure        | Long           | Short  |
+| :------------- |:-------------| :-----|
+| Class      | a2g class NAME | a2g cl NAME |
+| Component      | a2g component NAME      |   a2g c NAME |
+| Directive | a2g directive NAME      | a2g d NAME |
+| Enum | a2g enum NAME      | a2g e NAME |
+| Interface | a2g interface NAME      | a2g i NAME |
+| Module | a2g module NAME      | a2g m NAME |
+| Pipe | a2g pipe NAME      | a2g p NAME |
+| Service | a2g service NAME      | a2g s NAME |
 
 #### Installation
 
