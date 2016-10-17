@@ -94,7 +94,9 @@ This will produce a component named **FoxtrottUnicornCharlieKilo**
 `
 npm i -g a2g 
 `
-or (if you're more *modern*)
+
+or if you're more *modern*
+
 `
 yarn global add a2g
 `
