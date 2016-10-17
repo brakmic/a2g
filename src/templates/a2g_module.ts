@@ -18,7 +18,7 @@ export class $[MODULE_NAME]Module {
     constructor() { }
 }
 
-`;
+`.trim();
 
 export default function a2gModule(name: string): string {
     return _.replace(moduleBody, '$[MODULE_NAME]', name);

@@ -14,7 +14,7 @@ export class $[SERVICE_NAME]Service {
     constructor() { }
 
 }
-`;
+`.trim();
 
 export default function a2gService(name: string): string {
     return _.replace(serviceBody, '$[SERVICE_NAME]', name);

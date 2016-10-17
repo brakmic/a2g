@@ -17,7 +17,7 @@ export class $[PIPE_NAME]Pipe implements PipeTransform {
     }
 
 }
-`;
+`.trim();
 
 export default function a2gPipe(name: string): string {
     // multiple string replacements here

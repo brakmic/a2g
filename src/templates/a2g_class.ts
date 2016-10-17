@@ -13,7 +13,7 @@ export class $[CLASS_NAME] {
     constructor() { }
 }
 
-`;
+`.trim();
 
 export default function a2gClass(name: string): string {
     const properClass = _.replace(classBody, '$[CLASS_NAME]', name);

@@ -22,7 +22,7 @@ export class $[DIRECTIVE_NAME]Directive implements OnInit {
     }
 
 }
-`;
+`.trim();
 
 export default function a2gDirective(name: string, selector: string): string {
     let directive = _.replace(directiveBody, '$[DIRECTIVE_NAME]', name);

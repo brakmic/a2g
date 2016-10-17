@@ -22,7 +22,7 @@ export class $[COMPONENT_NAME]Component implements OnInit {
 
     }
 }
-`;
+`.trim();
 
 export default function a2gComponent(name: string, selectorName: string = 'selector-needed',
                                      templateUrl: string = 'template.html',
@@ -32,7 +32,7 @@ export default function a2gComponent(name: string, selectorName: string = 'selec
      properComponent = _.replace(properComponent, '$[COMPONENT_NAME]', name);
      let urls = '';
      _.each(styleUrls, (url) => {
-         urls += '`' + url + '`,\n';
+         urls += '\'' + url + '\',\n';
      });
      urls = _.trimEnd(urls, ',\n');
      properComponent = _.replace(properComponent, '$[STYLE_URLS]', urls);

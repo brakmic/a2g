@@ -7,7 +7,7 @@ const enumBody = `
 export enum $[ENUM_NAME] {
     $[ENUM_ELEMENTS]
 }
-`;
+`.trim();
 
 export default function a2gEnum(name: string, elements: string[]): string {
     let elemsString = '';
