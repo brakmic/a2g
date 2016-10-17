@@ -1,5 +1,5 @@
-export enum Operation {
-    Unknown,
+export enum Structure {
+    Unknown = 10,
     Class,
     Component,
     Service,
@@ -7,5 +7,6 @@ export enum Operation {
     Enum,
     Interface,
     Module,
-    Pipe
-}
+    Pipe // must be last
+};
+

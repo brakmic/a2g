@@ -21,14 +21,15 @@ describe('Class : XGen', () => {
   let a2gPipe: XGen = undefined;
   let a2gService: XGen = undefined;
 
-  const paramsComponent = ['node', 'index.ts', 'component', `dir=${testOutDir}`, 'foxtrott'];
-  const paramsClass = ['node', 'index.ts', 'class', `dir=${testOutDir}`, 'unicorn'];
-  const paramsDirective = ['node', 'index.ts', 'directive', `dir=${testOutDir}`, 'charlie'];
-  const paramsEnum = ['node', 'index.ts', 'enum', `dir=${testOutDir}`, 'bloodhound-gang', 'foxtrott', 'unicorn', 'charlie', 'kilo'];
-  const paramsInterface = ['node', 'index.ts', 'interface', `dir=${testOutDir}`, 'foxtrott'];
-  const paramsModule = ['node', 'index.ts', 'module', `dir=${testOutDir}`, 'foxtrott'];
-  const paramsPipe = ['node', 'index.ts', 'pipe', `dir=${testOutDir}`, 'foxtrott'];
-  const paramsService = ['node', 'index.ts', 'service', `dir=${testOutDir}`, 'foxtrott'];
+  const paramsComponent = ['node', 'index.ts',      'c',  'foxtrott',        '--dir', `${testOutDir}`, '--overwrite'];
+  const paramsClass =     ['node', 'index.ts',      'cl', 'unicorn',         '--dir', `${testOutDir}`, '--overwrite'];
+  const paramsDirective = ['node', 'index.ts',      'd',  'charlie',         '--dir', `${testOutDir}`, '--overwrite'];
+  const paramsEnum =      ['node', 'index.ts',      'e',  'bloodhound-gang', '--dir', `${testOutDir}`,
+                                                          '--opt', 'foxtrott', 'unicorn', 'charlie', 'kilo', '--overwrite'];
+  const paramsInterface = ['node', 'index.ts',      'i',  'unicorn',         '--dir', `${testOutDir}`, '--overwrite'];
+  const paramsModule =    ['node', 'index.ts',      'm',  'kilo',            '--dir', `${testOutDir}`, '--overwrite'];
+  const paramsPipe =      ['node', 'index.ts',      'p',  'mary',            '--dir', `${testOutDir}`, '--overwrite'];
+  const paramsService =   ['node', 'index.ts',      's',  'mammal',          '--dir', `${testOutDir}`, '--overwrite'];
 
   beforeAll(done => {
     a2gComponent = new XGen(paramsComponent);
@@ -79,7 +80,7 @@ describe('Class : XGen', () => {
   });
 
   beforeAll(done => {
-    a2gPipe = new XGen(paramsModule);
+    a2gPipe = new XGen(paramsPipe);
     a2gPipe.execute().then(res => {
       resultPipe = res;
       done();

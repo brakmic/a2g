@@ -12,7 +12,7 @@ export enum $[ENUM_NAME] {
 export default function a2gEnum(name: string, elements: string[]): string {
     let elemsString = '';
     let properEnum = _.replace(enumBody, '$[ENUM_NAME]', name);
-    _.each(elements, (el) => {
+    _.each(_.uniq(elements), (el) => {
         elemsString += _.upperFirst(el) + ',\n';
     });
     _.trimEnd(elemsString, ',\n');

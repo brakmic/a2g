@@ -1,28 +1,28 @@
 import * as _ from 'lodash';
-import { Operation } from '../enums';
+import { Structure } from '../enums';
 import { FUNCTIONS } from '../templates';
 
 
 export class Generator {
-    public static getFunction(operation: Operation): Function {
+    public static getFunction(operation: Structure): Function {
         switch (operation) {
-            case Operation.Class:
+            case Structure.Class:
                 return FUNCTIONS.a2gClass;
-            case Operation.Component:
+            case Structure.Component:
                 return FUNCTIONS.a2gComponent;
-            case Operation.Directive:
+            case Structure.Directive:
                 return FUNCTIONS.a2gDirective;
-            case Operation.Enum:
+            case Structure.Enum:
                 return FUNCTIONS.a2gEnum;
-            case Operation.Interface:
+            case Structure.Interface:
                 return FUNCTIONS.a2gInterface;
-            case Operation.Module:
+            case Structure.Module:
                 return FUNCTIONS.a2gModule;
-            case Operation.Pipe:
+            case Structure.Pipe:
                 return FUNCTIONS.a2gPipe;
-            case Operation.Service:
+            case Structure.Service:
                 return FUNCTIONS.a2gService;
-            case Operation.Unknown:
+            case Structure.Unknown:
                 return undefined;
             default:
                 return undefined;

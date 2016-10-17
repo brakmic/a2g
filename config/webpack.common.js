@@ -7,7 +7,6 @@ const helpers = require('./helpers');
  * Webpack Plugins
  */
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-const DashboardPlugin = require('webpack-dashboard/plugin');
 
 /*
  * Webpack Constants
@@ -132,9 +131,6 @@ module.exports = function(options) {
    * See: http://webpack.github.io/docs/configuration.html#plugins
    */
   plugins: [
-
-    new DashboardPlugin(),
-
     /*
      * Plugin: ForkCheckerPlugin
      * Description: Do type checking in a separate process, so webpack don't need to wait.
