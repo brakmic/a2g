@@ -15,6 +15,7 @@
     "url": "https://github.com/brakmic/a2g"
   },
   "scripts": {
+    "docker": "docker",
     "rimraf": "rimraf",
     "tslint": "tslint",
     "typedoc": "typedoc",
