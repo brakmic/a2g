@@ -6,7 +6,7 @@ const helpers = require('./helpers');
 /*
  * Webpack Plugins
  */
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+// const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 
 /*
  * Webpack Constants
@@ -29,7 +29,7 @@ module.exports = function(options) {
    *
    * See: (custom attribute)
    */
-  metadata: METADATA,
+  // metadata: METADATA,
 
   /*
    * Cache generated modules and chunks to improve performance for multiple incremental builds.
@@ -63,10 +63,10 @@ module.exports = function(options) {
     extensions: ['.ts', '.js', '.json', '.tpl'],
 
     // Make sure root is src
-    root: helpers.root('src'),
+    // root: helpers.root('src'),
 
     // remove other default values
-    modulesDirectories: ['node_modules'],
+    // modulesDirectories: ['node_modules'],
 
     alias: {
       'lodash': helpers.root('node_modules/lodash/index.js')
@@ -90,7 +90,7 @@ module.exports = function(options) {
      *
      * See: http://webpack.github.io/docs/configuration.html#module-loaders
      */
-    loaders: [
+    rules: [
       /*
        * Typescript loader support for .ts and Angular 2 async routes via .async.ts
        *
@@ -98,7 +98,7 @@ module.exports = function(options) {
        */
       {
         test: /\.tpl$/,
-        loader: 'string'
+        loader: 'string-loader'
       },
       {
         test: /\.ts$/,
@@ -111,17 +111,17 @@ module.exports = function(options) {
       },
     ],
     
-    postLoaders: [
-       {
-         test: /\.js$/,
-         loader: 'string-replace-loader',
-         query: {
-           search: 'var sourceMappingUrl = extractSourceMappingUrl\\(cssText\\);',
-           replace: 'var sourceMappingUrl = "";',
-           flags: 'g'
-         }
-       }
-    ]
+    // postLoaders: [
+    //    {
+    //      test: /\.js$/,
+    //      loader: 'string-replace-loader',
+    //      query: {
+    //        search: 'var sourceMappingUrl = extractSourceMappingUrl\\(cssText\\);',
+    //        replace: 'var sourceMappingUrl = "";',
+    //        flags: 'g'
+    //      }
+    //    }
+    // ]
 
   },
 
@@ -137,7 +137,7 @@ module.exports = function(options) {
      *
      * See: https://github.com/s-panferov/awesome-typescript-loader#forkchecker-boolean-defaultfalse
      */
-    new ForkCheckerPlugin()
+    // new ForkCheckerPlugin()
   ],
 
   /*

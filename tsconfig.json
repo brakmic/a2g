@@ -16,11 +16,11 @@
       "es6"
     ],
     "types": [ 
-              "jasmine",
               "node",
               "source-map",
               "uglify-js",
-              "webpack" ]
+              "webpack",
+              "lodash" ]
   },
   "exclude": [
     "node_modules",
